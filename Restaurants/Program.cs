@@ -18,13 +18,16 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 
 builder.Services.AddApplication();
 builder.Services.AddApplicationService(builder.Configuration);
+
+var urlApi = builder.Configuration["url"];
+
 string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("http://localhost:4200")
+                          builder.WithOrigins(urlApi)
                           .AllowAnyOrigin()
                           .AllowAnyHeader()
                           .AllowAnyMethod();

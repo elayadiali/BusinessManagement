@@ -18,6 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Ingredient\" />
+    <Folder Include="Features\Plat\Commands\" />
+    <Folder Include="Features\Plat\Queries\" />
+    <Folder Include="Features\Restautant\" />
     <Folder Include="Interfaces\" />
   </ItemGroup>
 
